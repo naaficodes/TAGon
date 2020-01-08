@@ -4,33 +4,6 @@
 var style="";
 var styleadded=[];
 
-	function crtbtn()
-	{
-		var thisstyle = 'crtbtn';
-		if(!(styleadded.includes(thisstyle))){
-			styleadded.push('crtbtn');
-		style+="\n .crtbtn { width: 200px; height: 300px; background-color:black; color: white; }";
-	}
-		var btnname=document.getElementById('btnname');
-		var crtbtn=document.createElement('button');
-		var classatt=document.createAttribute('class');
-		classatt.value="crtbtn";
-		crtbtn.setAttributeNode(classatt);
-		crtbtn.innerHTML=btnname.value;
-		crtbtn.value=btnname.value;
-
-		crtbtn.addEventListener('click',()=>{
-			let namee=this.value;
-			alert("hai");
-		});
-		previewbox.appendChild(crtbtn)
-			var x = crttitle.outerHTML;
-		file=file+"\n"+x;
-		console.log(x);
-		console.log(file);
-	}
-
-
 	var crttitle=()=>
 	{
 		var thisstyle = 'crttitleclass';
@@ -38,7 +11,7 @@ var styleadded=[];
 		styleadded.push('crttitleclass');
 		style+="\n .crttitleclass { margin: 10px 0px 10px 0px; width: 100%; height: 40px; background-color: green; }";
 	}
-		var crttitle=document.createElement('div');
+		var crttitle=document.createElement('nav');
 		var crttitleclass=document.createAttribute('class');
 		crttitleclass.value="crttitleclass";
 		crttitle.setAttributeNode(crttitleclass);
@@ -46,6 +19,25 @@ var styleadded=[];
 		var x = crttitle.outerHTML;
 		file=file+"\n"+x;
 		console.log(file);
+		console.log(styleadded);
+	}
+
+	var crtfooter=()=>
+	{
+		var thisstyle = 'crtfooterclass';
+	if(!(styleadded.includes(thisstyle))){
+		styleadded.push('crtfooterclass');
+		style+="\n .crtfooterclass { margin: 10px 0px 10px 0px; width: 100%; height: 40px; background-color: red; }";
+	}
+		var crttitle=document.createElement('footer');
+		var crttitleclass=document.createAttribute('class');
+		crttitleclass.value="crtfooterclass";
+		crttitle.setAttributeNode(crttitleclass);
+		previewbox.appendChild(crttitle)
+		var x = crttitle.outerHTML;
+		file=file+"\n"+x;
+		console.log(file);
+		console.log(styleadded);
 	}
 
 	var crtcontent=()=>
@@ -63,6 +55,36 @@ var styleadded=[];
 			var x = crttitle.outerHTML;
 		file=file+"\n"+x;
 		console.log(file);
+		console.log(styleadded);
+	}
+
+	var crtdoublediv=()=>
+	{
+		var thisstyle = 'doubledivparent';
+		if(!(styleadded.includes(thisstyle))){
+			styleadded.push('doubledivparent');
+		style+="\n .doubledivparent { margin: 10px 0px 10px 0px; display: flex; width: 100%; height: 300px; } .doubledivparent .doubledivchild { flex:5; margin: 5px; height: 100%; width: 100%; background-color: orange; }";
+	}
+	console.log(styleadded);
+
+		var crtdoubledivparent=document.createElement('div');
+		var crtdoubledivparentclass=document.createAttribute('class');
+		crtdoubledivparentclass.value='doubledivparent';
+		crtdoubledivparent.setAttributeNode(crtdoubledivparentclass);
+		crtdoubledivchild(crtdoubledivparent);	
+		crtdoubledivchild(crtdoubledivparent);	
+				previewbox.appendChild(crtdoubledivparent);
+				var x = crtdoubledivparent.outerHTML;
+		file=file+"\n"+x;
+				console.log(file);
+	}
+	function crtdoubledivchild(x){
+		var crtdoubledivchild=document.createElement('div');
+		var crtdoubledivchildclass=document.createAttribute('class');
+		crtdoubledivchildclass.value='doubledivchild';
+		crtdoubledivchild.setAttributeNode(crtdoubledivchildclass);
+		x.appendChild(crtdoubledivchild);
+
 	}
 
 	function download(name, type) {

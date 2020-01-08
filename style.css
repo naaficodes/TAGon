@@ -54,3 +54,19 @@ button
 {
 	display: none;
 }
+.doubledivparent
+{
+	margin: 10px 0px 10px 0px;
+	display: flex;
+	width: 100%;
+	height: 300px;
+}
+.doubledivparent .doubledivchild
+{
+	flex:5;
+	margin: 5px;
+	height: 100%;
+	width: 100%;
+	background-color: orange;
+}
+.crtfooterclass { margin: 10px 0px 10px 0px; width: 100%; height: 40px; background-color: red; }
