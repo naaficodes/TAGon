@@ -50,3 +50,7 @@ button
 	height: 250px;
 	background-color: blue;
 }
+#a
+{
+	display: none;
+}
