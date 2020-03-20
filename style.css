@@ -26,7 +26,7 @@ body
   }
 .layoutcanvas > div:not(.multidivparent):hover ,nav:hover,.doubledivchild:hover,.crtfooterclass:hover
 {
-	transition: 1s;
+	transition: 0.5s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 .layoutcanvas>div,nav,footer{
@@ -59,11 +59,25 @@ button
 	font-weight: 700;
 	border: none;
 	border-radius: 10px;
-
+}
+button:hover
+{
+	
+	cursor: pointer;
+}
+button:active
+{
+	opacity: 0.7;
+}
+button:focus {
+	outline:0;
 }
 button:last-child
 {
 	background-color: #ed6363;
+}
+.white{
+	color: whitesmoke;
 }
 .crtbtn
 {
@@ -79,6 +93,7 @@ button:last-child
 	height: 80px;
 	background-color:#393e46;
 	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 .crtcontentclass
@@ -88,7 +103,7 @@ button:last-child
 	height: 300px;
 	background-color:#393e46;
 	border-radius: 10px;
-	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #a
 {
@@ -107,7 +122,9 @@ button:last-child
 	flex:5;
 	height: 100%;
 	background-color:#393e46;
-	border-radius: 10px;	
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: 1s;	
 }
 .doubledivchild:nth-child(1)
 {
