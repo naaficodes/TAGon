@@ -74,24 +74,24 @@ var styleadded=[];
 
 	var crtdoublediv=()=>
 	{
-		var thisstyle = 'doubledivparent';
+		var thisstyle = 'multidivparent';
 		if(!(styleadded.includes(thisstyle))){
-			styleadded.push('doubledivparent');
-		style+="\n .doubledivparent { margin: 10px 0px 10px 0px; display: flex; width: 100%; height: 300px; } .doubledivparent .doubledivchild { flex:5; margin: 5px; height: 100%; width: 100%; background-color: orange; }";
+			styleadded.push('multidivparent');
+		style+="\n .multidivparent { margin: 10px 0px 10px 0px; display: flex; width: 100%; height: 300px; } .multidivparent .doubledivchild { flex:5; margin: 5px; height: 100%; width: 100%; background-color: orange; }";
 	}
 	console.log(styleadded);
 
-		var crtdoubledivparent=document.createElement('div');
-		var crtdoubledivparentclass=document.createAttribute('class');
-		crtdoubledivparentclass.value='doubledivparent';
-		crtdoubledivparent.setAttributeNode(crtdoubledivparentclass);
-		crtdoubledivchild(crtdoubledivparent);	
-		crtdoubledivchild(crtdoubledivparent);	
+		var crtmultidivparent=document.createElement('div');
+		var crtmultidivparentclass=document.createAttribute('class');
+		crtmultidivparentclass.value='multidivparent';
+		crtmultidivparent.setAttributeNode(crtmultidivparentclass);
+		crtdoubledivchild(crtmultidivparent);	
+		crtdoubledivchild(crtmultidivparent);	
 		var dell=document.createAttribute("oncontextmenu");
 		dell.value="javascript:eldel(this);return false;";
-		crtdoubledivparent.setAttributeNode(dell);
-				layoutcanvas.appendChild(crtdoubledivparent);
-		// 		var x = crtdoubledivparent.outerHTML;
+		crtmultidivparent.setAttributeNode(dell);
+				layoutcanvas.appendChild(crtmultidivparent);
+		// 		var x = crtmultidivparent.outerHTML;
 		// file=file+"\n"+x;
 		// 		console.log(file);
 	}
@@ -103,8 +103,40 @@ var styleadded=[];
 		x.appendChild(crtdoubledivchild);
 
 	}
+	var crttridiv=()=>
+	{
+		var thisstyle = 'multidivparent';
+		if(!(styleadded.includes(thisstyle))){
+			styleadded.push('multidivparent');
+		style+="\n .multidivparent { margin: 10px 0px 10px 0px; display: flex; width: 100%; height: 300px; } .multidivparent .doubledivchild { flex:5; margin: 5px; height: 100%; width: 100%; background-color: orange; }";
+	}
+	console.log(styleadded);
+
+		var crtmultidivparent=document.createElement('div');
+		var crtmultidivparentclass=document.createAttribute('class');
+		crtmultidivparentclass.value='multidivparent';
+		crtmultidivparent.setAttributeNode(crtmultidivparentclass);
+		crttridivchild(crtmultidivparent);	
+		crttridivchild(crtmultidivparent);
+		crttridivchild(crtmultidivparent);	
+		var dell=document.createAttribute("oncontextmenu");
+		dell.value="javascript:eldel(this);return false;";
+		crtmultidivparent.setAttributeNode(dell);
+				layoutcanvas.appendChild(crtmultidivparent);
+		// 		var x = crtmultidivparent.outerHTML;
+		// file=file+"\n"+x;
+		// 		console.log(file);
+	}
+	function crttridivchild(x){
+		var crttridivchild=document.createElement('div');
+		var crttridivchildclass=document.createAttribute('class');
+		crttridivchildclass.value='tridivchild';
+		crttridivchild.setAttributeNode(crttridivchildclass);
+		x.appendChild(crttridivchild);
+
+	}
 	function eldel(x){
-		if(confirm("do you want to delete ?")){
+		if(confirm("Do you want to delete this layout ?")){
 			layoutcanvas.removeChild(x);
 		}
 		

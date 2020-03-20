@@ -1,59 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 *
 {
 	margin:0;
 	padding: 0;
 }
-body{
-	overflow-y: hidden;
+body
+{
+	width: 100vw;
+	height: 100vh;
+	font-family: 'Open Sans';
 }
 .maincon{
-	width: 100vw;
-	min-height: 100vh;
 	display: flex;
+	height: 100vh;
 }
-
 .layoutcanvas
 {
 	background-color: #eeeeee;
 	padding: 40px 160px;
-	height: 100vh;
 	flex:7;
 	overflow-y: scroll;
 }
 .layout.layoutcanvas::-webkit-scrollbar {
 	width: 0 !important;
   }
-.layout.layoutcanvas > div:hover:not(.doubledivparent),nav:hover,.doubledivchild:hover,.crtfooterclass:hover
+.layoutcanvas > div:not(.multidivparent):hover ,nav:hover,.doubledivchild:hover,.crtfooterclass:hover
 {
 	transition: 1s;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 .layoutcanvas>div,nav,footer{
 	transition: 1s;
 }
 .layoutoptions
 {
-	/* padding-top: 160px; */
-	height:auto ;
 	flex:3;
 	background-color: #232931;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: center;
 }
-
+h1
+{
+	color: white;
+	font-family: 'Open Sans';
+	font-size: 40px;
+}
 button
 {
+	font-family: 'Open Sans';
 	margin: 20px;
 	width: 80%;
-
-	font-size: 16px;
+	font-size: 18px;
 	padding: 14px 40px;
 	background-color: #4ecca3;
 	color: white;
+	font-weight: 700;
 	border: none;
 	border-radius: 10px;
 
+}
+button:last-child
+{
+	background-color: #ed6363;
 }
 .crtbtn
 {
@@ -84,7 +94,7 @@ button
 {
 	display:none;
 }
-.doubledivparent
+.multidivparent
 {
 	margin: 40px 0px 40px 0px;
 	display: flex;
@@ -92,7 +102,7 @@ button
 	height: 300px;
 	justify-content: space-between;
 }
-.doubledivparent .doubledivchild
+.multidivparent .doubledivchild
 {
 	flex:5;
 	height: 100%;
@@ -104,6 +114,26 @@ button
 	margin-right: 20px;
 }
 .doubledivchild:nth-child(2)
+{
+	margin-left: 20px;
+}
+.multidivparent .tridivchild
+{
+	flex:3.333;
+	height: 100%;
+	background-color:#393e46;
+	border-radius: 10px;	
+}
+.tridivchild:nth-child(1)
+{
+	margin-right: 20px;
+}
+.tridivchild:nth-child(2)
+{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.tridivchild:nth-child(3)
 {
 	margin-left: 20px;
 }
