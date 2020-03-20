@@ -7,12 +7,14 @@ var mobstyle="";
 var mobstyleadded=[];
 var mediaq1="@media only screen and (max-width: 768px) {";
 
+//To create and include the attibutes
 var createattr=(whatattr,value,towho)=>{
 	var attr=document.createAttribute(whatattr);
 	attr.value=value;
 	towho.setAttributeNode(attr);
 }
 
+//Dynamic addition of Navbar in DOM.
 var crttitle=()=>
 {
 	var thisstyle = 'crttitleclass';
@@ -27,6 +29,7 @@ var crttitle=()=>
 	console.log(styleadded);
 }
 
+//Dynamic addition of Footer in DOM.
 var crtfooter=()=>
 {
 	var thisstyle = 'crtfooterclass';
@@ -41,6 +44,7 @@ var crtfooter=()=>
 	console.log(styleadded);
 }
 
+//Dynamic addition of Div in DOM.
 var crtcontent=()=>
 {
 	var thisstyle = 'crtcontentclass';
@@ -54,6 +58,8 @@ var crtcontent=()=>
 	layoutcanvas.appendChild(crtcontent);
 	console.log(styleadded);
 }
+
+//Dynamic addition of Topic in DOM.
 var crttopic=()=>
 {
 	var thisstyle = 'crttopicclass';
@@ -73,6 +79,8 @@ var crttopic=()=>
 	layoutcanvas.appendChild(crttopic);
 	console.log(styleadded);
 }
+
+//Fuction for adding multi div parent css in the output code
 var multidivparentadd=()=>
 {
 	var thisstyle = 'multidivparent';
@@ -86,6 +94,8 @@ var multidivparentadd=()=>
 		mobstyle+="\n .multidivparent .doubledivchild,.multidivparent .tridivchild { margin:unset; flex: unset; width: 100%; } .doubledivchild:nth-child(1) { margin-bottom: 10px; } .doubledivchild:nth-child(2) { margin-left: unset; } .tridivchild:nth-child(1) { margin-bottom: 10px; } .tridivchild:nth-child(2) { margin-right: unset; margin-left: unset; } .tridivchild:nth-child(3) { margin-top: 10px; }";
 	}
 }
+
+//Dynamic addition of Duo Div in DOM.
 var crtdoublediv=()=>
 {
 	multidivparentadd();
@@ -110,6 +120,8 @@ function crtdoubledivchild(x){
 	x.appendChild(crtdoubledivchild);
 	
 }
+
+//Dynamic addition of Tri Div in DOM.
 var crttridiv=()=>
 {
 	multidivparentadd();
@@ -135,15 +147,16 @@ function crttridivchild(x){
 	x.appendChild(crttridivchild);
 	
 }
+
+//To delete a layout element
 function eldel(x){
 	if(confirm("Do you want to delete this layout ?")){
 		layoutcanvas.removeChild(x);
 	}
 	
 }
-function showcodeo(){
-	alert(layoutcanvas.outerHTML);
-}
+
+//To Download the final code
 function download(name, type) {
 	layoutcanvas.removeChild(document.getElementById('ins1'));
 	file=layoutcanvas.outerHTML;
