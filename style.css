@@ -126,7 +126,7 @@ button:focus {
 	margin: 40px 0px 40px 0px;
 	display: flex;
 	width: 100%;
-	height: 300px;
+	min-height: 300px;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
@@ -135,7 +135,7 @@ button:focus {
 .multidivparent .doubledivchild
 {
 	flex:5;
-	height: 100%;
+	min-height: 100%;
 	background-color:#393e46;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	transition: 1s;	
@@ -154,7 +154,7 @@ button:focus {
 .multidivparent .tridivchild
 {
 	flex:3.333;
-	height: 100%;
+	min-height: 100%;
 	background-color:#393e46;
 	border-radius: 10px;
 
@@ -210,8 +210,31 @@ a:link {
 
   /* media */
   @media only screen and (max-width: 768px) {
-	.multidivparent .doubledivchild
+	.multidivparent .doubledivchild,.multidivparent .tridivchild
 	{
-		flex: 10;
+		margin:10px 0px;
+		flex: unset;
+		width: 100%;
 	}
+	.doubledivchild:nth-child(1)
+{
+	margin-bottom: 10px;
+}
+.doubledivchild:nth-child(2)
+{
+	margin-left: unset;
+}
+.tridivchild:nth-child(1)
+{
+	margin-bottom: 10px;
+}
+.tridivchild:nth-child(2)
+{
+	margin-right: unset;
+	margin-left: unset;
+}
+.tridivchild:nth-child(3)
+{
+	margin-top: 10px;
+}
   }
