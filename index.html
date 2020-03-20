@@ -4,6 +4,7 @@
 	<title>TAG-ON</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="dragula.css">
+	<script src="https://kit.fontawesome.com/2cba884da3.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -11,19 +12,23 @@
 	
 	<div class="layoutoptions">
 		<br>
-		<img src="TAG-on.png" width="200" style="margin:10px;"/>
-		<p class="white">Website layout code generator </p>
+		<img src="TAG-on.png" width="200" style="margin:0px 10px 10px 10px;"/>
+		<p class="shorttext">Website layout code generator </p>
 		<br/>
-		<button onclick="crttitle();">Navbar</button>
-		<button onclick="crtcontent();">Div</button>
-		<button onclick="crtdoublediv();">Duo Div</button>
-		<button onclick="crttridiv();">Tri Div</button>
-		<button onclick="crtfooter();">Footer</button>
+		<button onclick="crttitle();"><span class="plusonbutton">+</span>Navbar</button>
+		<button onclick="crtcontent();"><span class="plusonbutton">+</span>Add Div</button>
+		<button onclick="crtdoublediv();"><span class="plusonbutton">+</span>Duo Div</button>
+		<button onclick="crttridiv();"><span class="plusonbutton">+</span>Tri Div</button>
+		<button onclick="crtfooter();"><span class="plusonbutton">+</span>Footer</button>
 
-		<a href="" id="a" download>click here to download your file</a>
-<button onclick="download('yourcode.html', 'text/html')">Download Code</button>
-	</div>
+		
+<button onclick="download('yourcode.html', 'text/html')" id="db"><span class="plusonbutton"><i class="fas fa-cloud-download-alt"></i></span>Download Code</button>
+<a href="" id="a" class="white" download>Click here to download your code</a>
+<p class="shorttext">Made with <span style="color: tomato;"><i class="fas fa-heart"></i></span> by <a href="https://naaficodes.github.io/" target="_blank">Abdul Wahid Naafi</a></p>	
+</div>
 	<div class="layoutcanvas" id="layoutcanvas">
+		<p style="color:#757575;"><i class="fas fa-hand-pointer"></i> Drag layout to rearrange.<br/> <i class="fas fa-mouse"></i> Right click on the layout to <span style="color: tomato;">delete.</span></p>
+		
 	</div>
 </div>
 <script type="text/javascript" src="script.js"></script>

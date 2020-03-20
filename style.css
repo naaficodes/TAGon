@@ -21,6 +21,11 @@ body
 	flex:7;
 	overflow-y: scroll;
 }
+.plusonbutton
+{
+	float: left;
+	font-size: 21px;
+}
 .layout.layoutcanvas::-webkit-scrollbar {
 	width: 0 !important;
   }
@@ -72,12 +77,13 @@ button:active
 button:focus {
 	outline:0;
 }
-button:last-child
+#db
 {
 	background-color: #ed6363;
 }
-.white{
+.shorttext{
 	color: whitesmoke;
+	size:16px;
 }
 .crtbtn
 {
@@ -163,3 +169,28 @@ button:last-child
 	  border-radius: 10px;
 	
 	 }
+
+/* unvisited link */
+a:link {
+	text-decoration: none;
+	color: white;
+  }
+  
+  /* visited link */
+  a:visited {
+	text-decoration: none;
+	color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+	text-decoration: underline;
+	color: white;
+  }
+  
+  /* selected link */
+  a:active {
+	text-decoration: none;
+	color: white;
+  }
+  
