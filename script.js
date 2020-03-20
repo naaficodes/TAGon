@@ -1,5 +1,6 @@
-	var previewbox=document.getElementById('previewbox');
-		var file="";
+
+var layoutcanvas=document.getElementById('layoutcanvas');
+		var file=layoutcanvas.outerHTML;
 	var generated="";
 var style="";
 var styleadded=[];
@@ -15,10 +16,16 @@ var styleadded=[];
 		var crttitleclass=document.createAttribute('class');
 		crttitleclass.value="crttitleclass";
 		crttitle.setAttributeNode(crttitleclass);
-		previewbox.appendChild(crttitle)
-		var x = crttitle.outerHTML;
-		file=file+"\n"+x;
-		console.log(file);
+		var dragid=document.createAttribute("id");
+		dragid.value="draggable";
+		crttitle.setAttributeNode(dragid);
+		var dell=document.createAttribute("oncontextmenu");
+		dell.value="javascript:eldel(this);return false;";
+		crttitle.setAttributeNode(dell);
+		layoutcanvas.appendChild(crttitle)
+		// var x = crttitle.outerHTML;
+		// file=file+"\n"+x;
+		// console.log(file);
 		console.log(styleadded);
 	}
 
@@ -33,10 +40,13 @@ var styleadded=[];
 		var crttitleclass=document.createAttribute('class');
 		crttitleclass.value="crtfooterclass";
 		crttitle.setAttributeNode(crttitleclass);
-		previewbox.appendChild(crttitle)
-		var x = crttitle.outerHTML;
-		file=file+"\n"+x;
-		console.log(file);
+		var dell=document.createAttribute("oncontextmenu");
+		dell.value="javascript:eldel(this);return false;";
+		crttitle.setAttributeNode(dell);
+		layoutcanvas.appendChild(crttitle)
+		// var x = crttitle.outerHTML;
+		// file=file+"\n"+x;
+		// console.log(file);
 		console.log(styleadded);
 	}
 
@@ -51,11 +61,15 @@ var styleadded=[];
 		var crttitleclass=document.createAttribute('class');
 		crttitleclass.value="crtcontentclass";
 		crttitle.setAttributeNode(crttitleclass);
-		previewbox.appendChild(crttitle)
-			var x = crttitle.outerHTML;
-		file=file+"\n"+x;
-		console.log(file);
+		var dell=document.createAttribute("oncontextmenu");
+		dell.value="javascript:eldel(this);return false;";
+		crttitle.setAttributeNode(dell);
+		layoutcanvas.appendChild(crttitle);
+		// 	var x = crttitle.outerHTML;
+		// file=file+"\n"+x;
+		// console.log(file);
 		console.log(styleadded);
+		//oncontextmenu="javascript:alert('success!');return false;">
 	}
 
 	var crtdoublediv=()=>
@@ -73,10 +87,13 @@ var styleadded=[];
 		crtdoubledivparent.setAttributeNode(crtdoubledivparentclass);
 		crtdoubledivchild(crtdoubledivparent);	
 		crtdoubledivchild(crtdoubledivparent);	
-				previewbox.appendChild(crtdoubledivparent);
-				var x = crtdoubledivparent.outerHTML;
-		file=file+"\n"+x;
-				console.log(file);
+		var dell=document.createAttribute("oncontextmenu");
+		dell.value="javascript:eldel(this);return false;";
+		crtdoubledivparent.setAttributeNode(dell);
+				layoutcanvas.appendChild(crtdoubledivparent);
+		// 		var x = crtdoubledivparent.outerHTML;
+		// file=file+"\n"+x;
+		// 		console.log(file);
 	}
 	function crtdoubledivchild(x){
 		var crtdoubledivchild=document.createElement('div');
@@ -86,8 +103,17 @@ var styleadded=[];
 		x.appendChild(crtdoubledivchild);
 
 	}
-
+	function eldel(x){
+		if(confirm("do you want to delete ?")){
+			layoutcanvas.removeChild(x);
+		}
+		
+	}
+function showcodeo(){
+	alert(layoutcanvas.outerHTML);
+}
 	function download(name, type) {
+		file=layoutcanvas.outerHTML;
   var a = document.getElementById("a");
   a.style.display = "block";
   generated="<!DOCTYPE html><html><head><style>"+style+"</style></head><body>"+file+"</body></html>";

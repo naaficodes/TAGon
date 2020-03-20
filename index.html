@@ -3,25 +3,30 @@
 <head>
 	<title>TAGon</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
+	<link rel="stylesheet" type="text/css" href="dragula.css">
 </head>
 <body>
 
 <div class="maincon">
-	<div class="leftt" id="previewbox">
-	</div>
-	<div class="rightt">
-		<input type="text" id="btnname" />
+	
+	<div class="layoutoptions">
 		<br>
-		<button onclick="crttitle();">Title Bar</button>
+		
+		<button onclick="crttitle();">Navbar</button>
 		<button onclick="crtcontent();">Content</button>
 		<button onclick="crtdoublediv();">Double Content</button>
 		<button onclick="crtfooter();">Footer</button>
 
 		<a href="" id="a" download>click here to download your file</a>
-<button onclick="download('yourcode.html', 'text/html')">Create file</button>
+<button onclick="download('yourcode.html', 'text/html')">Download Code</button>
+	</div>
+	<div class="layoutcanvas" id="layoutcanvas">
 	</div>
 </div>
 <script type="text/javascript" src="script.js"></script>
+<script src='dragula.min.js'></script>
+<script>
+	dragula([document.getElementById("previewbox")]);
+</script>
 </body>
 </html>
