@@ -29,10 +29,11 @@ body
 .layout.layoutcanvas::-webkit-scrollbar {
 	width: 0 !important;
   }
-.layoutcanvas > div:not(.multidivparent):hover ,nav:hover,.doubledivchild:hover,.crtfooterclass:hover
+.layoutcanvas > div:not(.multidivparent):hover ,nav:hover,.doubledivchild:hover,.crtfooterclass:hover,.tridivchild:hover
 {
 	transition: 0.5s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+	cursor: move;
 }
 .layoutcanvas>div,nav,footer{
 	transition: 1s;
@@ -92,29 +93,34 @@ button:focus {
 	background-color:black;
 	color: white;
 }
-.crttitleclass
+/* in common */
+.common
 {
-	margin: 40px 0px 40px 0px;
-	width: 100%;
+    margin: 40px 0px 40px 0px;
+    width: 100%;
+	background-color:#393e46;
+	border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+
+
+/* nav */
+
+.crttitleclass
+{	
 	height: 80px;
 	background-color:#393e46;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
+
+/* content div */
 .crtcontentclass
 {
-	margin: 40px 0px 40px 0px;
-	width: 100%;
 	height: 300px;
-	background-color:#393e46;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color:#393e46;	
 }
-#a
-{
-	display:none;
-}
+
+
+/* multidiv parent*/
 .multidivparent
 {
 	margin: 40px 0px 40px 0px;
@@ -122,15 +128,19 @@ button:focus {
 	width: 100%;
 	height: 300px;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
+
+/* duodiv */
 .multidivparent .doubledivchild
 {
 	flex:5;
 	height: 100%;
 	background-color:#393e46;
-	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	transition: 1s;	
+	border-radius: 10px;
+
 }
 .doubledivchild:nth-child(1)
 {
@@ -140,12 +150,14 @@ button:focus {
 {
 	margin-left: 20px;
 }
+/* tridiv */
 .multidivparent .tridivchild
 {
 	flex:3.333;
 	height: 100%;
 	background-color:#393e46;
-	border-radius: 10px;	
+	border-radius: 10px;
+
 }
 .tridivchild:nth-child(1)
 {
@@ -160,15 +172,16 @@ button:focus {
 {
 	margin-left: 20px;
 }
+
+/* footer */
 .crtfooterclass { 
-	z-index: 5;
-	margin: 40px 0px 40px 0px;
-	 width: 100%;
 	  height: 200px; 
-	  background-color:#393e46;
-	  border-radius: 10px;
-	
 	 }
+
+#a
+{
+	display:none;
+}
 
 /* unvisited link */
 a:link {
@@ -194,3 +207,11 @@ a:link {
 	color: white;
   }
   
+
+  /* media */
+  @media only screen and (max-width: 768px) {
+	.multidivparent .doubledivchild
+	{
+		flex: 10;
+	}
+  }
