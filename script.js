@@ -8,6 +8,12 @@ var mobstyle="";
 var mobstyleadded=[];
 var mediaq1="@media only screen and (max-width: 768px) {";
 
+var createattr=(whatattr,value,towho)=>{
+	var attr=document.createAttribute(whatattr);
+		attr.value=value;
+		towho.setAttributeNode(attr);
+}
+
 	var crttitle=()=>
 	{
 		var thisstyle = 'crttitleclass';
@@ -16,16 +22,15 @@ var mediaq1="@media only screen and (max-width: 768px) {";
 		style+="\n .crttitleclass { margin: 10px 0px 10px 0px; width: 100%; height: 80px; background-color: #009688; }";
 	}
 		var crttitle=document.createElement('nav');
-		var crttitleclass=document.createAttribute('class');
-		crttitleclass.value="crttitleclass common";
-		crttitle.setAttributeNode(crttitleclass);
-		var dell=document.createAttribute("oncontextmenu");
-		dell.value="javascript:eldel(this);return false;";
-		crttitle.setAttributeNode(dell);
+		// var crttitleclass=document.createAttribute('class');
+		// crttitleclass.value="crttitleclass common";
+		// crttitle.setAttributeNode(crttitleclass);
+		createattr('class',"crttitleclass common",crttitle);
+		// var dell=document.createAttribute("oncontextmenu");
+		// dell.value="javascript:eldel(this);return false;";
+		// crttitle.setAttributeNode(dell);
+		createattr('oncontextmenu',"javascript:eldel(this);return false;",crttitle);
 		layoutcanvas.appendChild(crttitle)
-		// var x = crttitle.outerHTML;
-		// file=file+"\n"+x;
-		// console.log(file);
 		console.log(styleadded);
 	}
 
@@ -37,16 +42,15 @@ var mediaq1="@media only screen and (max-width: 768px) {";
 		style+="\n .crtfooterclass { margin: 10px 0px 10px 0px; width: 100%; height: 200px; background-color: #FF9800; }";
 	}
 		var crtfooter=document.createElement('footer');
-		var crtfooterclass=document.createAttribute('class');
-		crtfooterclass.value="crtfooterclass common";
-		crtfooter.setAttributeNode(crtfooterclass);
-		var dell=document.createAttribute("oncontextmenu");
-		dell.value="javascript:eldel(this);return false;";
-		crtfooter.setAttributeNode(dell);
+		// var crtfooterclass=document.createAttribute('class');
+		// crtfooterclass.value="crtfooterclass common";
+		// crtfooter.setAttributeNode(crtfooterclass);
+		createattr('class',"crtfooterclass common",crtfooter);
+		// var dell=document.createAttribute("oncontextmenu");
+		// dell.value="javascript:eldel(this);return false;";
+		// crtfooter.setAttributeNode(dell);
+		createattr('oncontextmenu',"javascript:eldel(this);return false;",crtfooter);
 		layoutcanvas.appendChild(crtfooter)
-		// var x = crttitle.outerHTML;
-		// file=file+"\n"+x;
-		// console.log(file);
 		console.log(styleadded);
 	}
 
@@ -58,18 +62,17 @@ var mediaq1="@media only screen and (max-width: 768px) {";
 		style+="\n .crtcontentclass { margin: 10px 0px 10px 0px; width: 100%; height: 250px; background-color: #2196f3; }";
 	}
 		var crtcontent=document.createElement('div');
-		var crtcontentclass=document.createAttribute('class');
-		crtcontentclass.value="crtcontentclass common";
-		crtcontent.setAttributeNode(crtcontentclass);
-		var dell=document.createAttribute("oncontextmenu");
-		dell.value="javascript:eldel(this);return false;";
-		crtcontent.setAttributeNode(dell);
+		// var crtcontentclass=document.createAttribute('class');
+		// crtcontentclass.value="crtcontentclass common";
+		// crtcontent.setAttributeNode(crtcontentclass);
+		createattr('class',"crtcontentclass common",crtcontent);
+
+		// var dell=document.createAttribute("oncontextmenu");
+		// dell.value="javascript:eldel(this);return false;";
+		// crtcontent.setAttributeNode(dell);
+		createattr('oncontextmenu',"javascript:eldel(this);return false;",crtcontent);
 		layoutcanvas.appendChild(crtcontent);
-		// 	var x = crttitle.outerHTML;
-		// file=file+"\n"+x;
-		// console.log(file);
 		console.log(styleadded);
-		//oncontextmenu="javascript:alert('success!');return false;">
 	}
 	var crttopic=()=>
 	{
@@ -84,19 +87,17 @@ var mediaq1="@media only screen and (max-width: 768px) {";
 		mobstyle+="\n .crttopicclass{text-align:center;}";
 	}
 		var crttopic=document.createElement('h3');
-		var crttopicclass=document.createAttribute('class');
-		crttopicclass.value="crttopicclass";
-		crttopic.setAttributeNode(crttopicclass);
+		// var crttopicclass=document.createAttribute('class');
+		// crttopicclass.value="crttopicclass";
+		// crttopic.setAttributeNode(crttopicclass);
+		createattr('class',"crttopicclass",crttopic);
 		crttopic.innerHTML="Topic";
-		var dell=document.createAttribute("oncontextmenu");
-		dell.value="javascript:eldel(this);return false;";
-		crttopic.setAttributeNode(dell);
+		// var dell=document.createAttribute("oncontextmenu");
+		// dell.value="javascript:eldel(this);return false;";
+		// crttopic.setAttributeNode(dell);
+		createattr('oncontextmenu',"javascript:eldel(this);return false;",crttopic);
 		layoutcanvas.appendChild(crttopic);
-		// 	var x = crttitle.outerHTML;
-		// file=file+"\n"+x;
-		// console.log(file);
 		console.log(styleadded);
-		//oncontextmenu="javascript:alert('success!');return false;">
 	}
 	var multidivparentadd=()=>
 	{
@@ -122,24 +123,25 @@ var mediaq1="@media only screen and (max-width: 768px) {";
 	console.log(styleadded);
 
 		var crtmultidivparent=document.createElement('div');
-		var crtmultidivparentclass=document.createAttribute('class');
-		crtmultidivparentclass.value='multidivparent';
-		crtmultidivparent.setAttributeNode(crtmultidivparentclass);
+		// var crtmultidivparentclass=document.createAttribute('class');
+		// crtmultidivparentclass.value='multidivparent';
+		// crtmultidivparent.setAttributeNode(crtmultidivparentclass);
+		createattr('class',"multidivparent",crtmultidivparent);
 		crtdoubledivchild(crtmultidivparent);	
 		crtdoubledivchild(crtmultidivparent);	
-		var dell=document.createAttribute("oncontextmenu");
-		dell.value="javascript:eldel(this);return false;";
-		crtmultidivparent.setAttributeNode(dell);
+		// var dell=document.createAttribute("oncontextmenu");
+		// dell.value="javascript:eldel(this);return false;";
+		// crtmultidivparent.setAttributeNode(dell);
+		createattr('oncontextmenu',"javascript:eldel(this);return false;",crtmultidivparent);
 				layoutcanvas.appendChild(crtmultidivparent);
-		// 		var x = crtmultidivparent.outerHTML;
-		// file=file+"\n"+x;
-		// 		console.log(file);
 	}
 	function crtdoubledivchild(x){
 		var crtdoubledivchild=document.createElement('div');
-		var crtdoubledivchildclass=document.createAttribute('class');
-		crtdoubledivchildclass.value='doubledivchild';
-		crtdoubledivchild.setAttributeNode(crtdoubledivchildclass);
+		// var crtdoubledivchildclass=document.createAttribute('class');
+		// crtdoubledivchildclass.value='doubledivchild';
+		// crtdoubledivchild.setAttributeNode(crtdoubledivchildclass);
+		createattr('class',"doubledivchild",crtdoubledivchild);
+
 		x.appendChild(crtdoubledivchild);
 
 	}
@@ -154,25 +156,26 @@ var mediaq1="@media only screen and (max-width: 768px) {";
 	console.log(styleadded);
 
 		var crtmultidivparent=document.createElement('div');
-		var crtmultidivparentclass=document.createAttribute('class');
-		crtmultidivparentclass.value='multidivparent';
-		crtmultidivparent.setAttributeNode(crtmultidivparentclass);
+		// var crtmultidivparentclass=document.createAttribute('class');
+		// crtmultidivparentclass.value='multidivparent';
+		// crtmultidivparent.setAttributeNode(crtmultidivparentclass);
+		createattr('class',"multidivparent",crtmultidivparent);
 		crttridivchild(crtmultidivparent);	
 		crttridivchild(crtmultidivparent);
 		crttridivchild(crtmultidivparent);	
-		var dell=document.createAttribute("oncontextmenu");
-		dell.value="javascript:eldel(this);return false;";
-		crtmultidivparent.setAttributeNode(dell);
+		// var dell=document.createAttribute("oncontextmenu");
+		// dell.value="javascript:eldel(this);return false;";
+		// crtmultidivparent.setAttributeNode(dell);
+		createattr('oncontextmenu',"javascript:eldel(this);return false;",crtmultidivparent);
 				layoutcanvas.appendChild(crtmultidivparent);
-		// 		var x = crtmultidivparent.outerHTML;
-		// file=file+"\n"+x;
-		// 		console.log(file);
 	}
 	function crttridivchild(x){
 		var crttridivchild=document.createElement('div');
-		var crttridivchildclass=document.createAttribute('class');
-		crttridivchildclass.value='tridivchild';
-		crttridivchild.setAttributeNode(crttridivchildclass);
+		// var crttridivchildclass=document.createAttribute('class');
+		// crttridivchildclass.value='tridivchild';
+		// crttridivchild.setAttributeNode(crttridivchildclass);
+		createattr('class',"tridivchild",crttridivchild);
+
 		x.appendChild(crttridivchild);
 
 	}
