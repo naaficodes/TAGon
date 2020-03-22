@@ -78,7 +78,11 @@ var multidivparentadd=()=>
 {
 	let csscode=".multidivparent { margin: 10px 0px; display: flex; width: 100%; min-height: 300px; justify-content: space-between; flex-wrap: wrap; }";
 	let mobcsscode='.multidivparent .doubledivchild,.multidivparent .tridivchild { margin:unset; flex: unset; width: 100%; } .doubledivchild:nth-child(1) { margin-bottom: 10px; } .doubledivchild:nth-child(2) { margin-left: unset; } .tridivchild:nth-child(1) { margin-bottom: 10px; } .tridivchild:nth-child(2) { margin-right: unset; margin-left: unset; } .tridivchild:nth-child(3) { margin-top: 10px; }';
-	addtocanvas(null,'multidivparent',csscode,null,null,null);
+	var thisstyle = ".multidivparent";
+	if(!(styleadded.includes(thisstyle))){
+		styleadded.push("multidivparent");
+		style+="\n"+csscode;
+	}
 	mobileresponsive('multidivparent',mobcsscode)
 }
 
@@ -130,11 +134,24 @@ function eldel(x){
 //To Download the final code
 function download(name, type) {
 	layoutcanvas.removeChild(document.getElementById('ins1'));
+	nullvars=document.getElementsByTagName('null');
+	console.log(nullvars.length);
+	for(let i=0;i<nullvars.length;i++)
+	{
+		nullvars[i].remove();
+		console.log(i);
+	}
 	file=layoutcanvas.outerHTML;
 	var a = document.getElementById("a");
 	a.style.display = "block";
-	generated="<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
+	generated="<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>*{padding:0;margin:0;}"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
+	generated=generated.replace('class="layoutcanvas" id="layoutcanvas"',"");
+	generated=generated.replace(new RegExp('oncontextmenu="javascript|[:]eldel[(]this[)]|;return false;|"','g'),"");
+	// generated=generated.replace(<null null="null" oncontextmenu="javascript:eldel(this);return false;"></null>/g',"");
 	var dfile = new Blob([generated], {type: type});
 	a.href = URL.createObjectURL(dfile);
 	a.download = name;
 }
+
+
+
