@@ -20,7 +20,7 @@ var createattr=(whatattr,value,towho)=>{
 var addtocanvas=(layout,outclassname,cssvar,whatattr,attrvalue,innerhtmlvalue)=>{
 	var thisstyle = outclassname;
 	if(!(styleadded.includes(thisstyle))){
-		styleadded.push('crttitleclass');
+		styleadded.push(outclassname);
 		style+="\n"+cssvar;
 	}
 	var ele=document.createElement(layout);
@@ -45,7 +45,6 @@ var crttitle=()=>
 	let csscode='.crttitleclass { margin: 10px 0px 10px 0px; width: 100%; height: 80px; background-color: #009688; }';
 	addtocanvas('nav','crttitleclass',csscode,'class','crttitleclass common',null);
 
-
 	// var thisstyle = 'crttitleclass';
 	// if(!(styleadded.includes(thisstyle))){
 	// 	styleadded.push('crttitleclass');
@@ -63,6 +62,7 @@ var crtfooter=()=>
 {
 	let csscode='.crtfooterclass { margin: 10px 0px 10px 0px; width: 100%; height: 200px; background-color: #FF9800; }';
 	addtocanvas('footer','crtfooterclass',csscode,'class','crtfooterclass common',null);
+	
 	// var thisstyle = 'crtfooterclass';
 	// if(!(styleadded.includes(thisstyle))){
 	// 	styleadded.push('crtfooterclass');
@@ -80,6 +80,7 @@ var crtcontent=()=>
 {
 	let csscode='.crtcontentclass { margin: 10px 0px 10px 0px; width: 100%; height: 250px; background-color: #2196f3; }';
 	addtocanvas('div','crtcontentclass',csscode,'class','crtcontentclass common',null);
+	
 	// var thisstyle = 'crtcontentclass';
 	// if(!(styleadded.includes(thisstyle))){
 	// 	styleadded.push('crtcontentclass');
@@ -99,7 +100,6 @@ var crttopic=()=>
 	let mobcsscode='.crttopicclass{text-align:center;}';
 	addtocanvas('h3',"crttopicclass",csscode,'class','crttopicclass',"Topic");
 	mobileresponsive('crttopicclass',mobcsscode);
-
 	// var thisstyle = 'crttopicclass';
 	// if(!(styleadded.includes(thisstyle))){
 	// 	styleadded.push('crttopicclass');
@@ -118,8 +118,9 @@ var crttopic=()=>
 	// console.log(styleadded);
 }
 
-//Fuction for adding multi div parent css in the output code
+//This variable holds the count of multidiv wrappers.
 var multidivcount=0;
+//Fuction for adding multi div parent css in the output code
 var multidivparentadd=()=>
 {
 	let csscode=".multidivparent { margin: 10px 0px; display: flex; width: 100%; min-height: 300px; justify-content: space-between; flex-wrap: wrap; }";
@@ -148,6 +149,7 @@ var crtdoublediv=()=>
 	crtdoubledivchild(multidivparent[multidivcount]);	
 	crtdoubledivchild(multidivparent[multidivcount]);
 	multidivcount++;	
+	
 	// var thisstyle = 'doubledivchild';
 	// if(!(styleadded.includes(thisstyle))){
 	// 	styleadded.push('doubledivchild');
@@ -179,6 +181,7 @@ var crttridiv=()=>
 	crttridivchild(multidivparent[multidivcount]);
 	crttridivchild(multidivparent[multidivcount]);
 	multidivcount++;	
+	
 	// var thisstyle = 'tridivchild';
 	// if(!(styleadded.includes(thisstyle))){
 	// 	styleadded.push('tridivchild');
@@ -205,6 +208,7 @@ function crttridivchild(x){
 function eldel(x){
 	if(confirm("Do you want to delete this layout ?")){
 		layoutcanvas.removeChild(x);
+		multidivcount--;
 	}
 	
 }
