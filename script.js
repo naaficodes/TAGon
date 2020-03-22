@@ -144,7 +144,8 @@ function download(name, type) {
 	file=layoutcanvas.outerHTML;
 	var a = document.getElementById("a");
 	a.style.display = "block";
-	generated="<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>*{padding:0;margin:0;}"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
+	generatedusing="<!-- This Layout code is generated using TAG-ON, Made by Abdul Wahid Naafi (naaficodes.github.io) -->";
+	generated="<!DOCTYPE html><html><head>"+generatedusing+"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style>*{padding:0;margin:0;}"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
 	generated=generated.replace('class="layoutcanvas" id="layoutcanvas"',"");
 	generated=generated.replace(new RegExp('oncontextmenu="javascript|[:]eldel[(]this[)]|;return false;|"','g'),"");
 	// generated=generated.replace(<null null="null" oncontextmenu="javascript:eldel(this);return false;"></null>/g',"");
