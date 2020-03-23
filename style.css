@@ -8,6 +8,7 @@ body
 {
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 	font-family: 'Open Sans';
 }
 .maincon{
@@ -26,9 +27,10 @@ body
 	float: left;
 	font-size: 21px;
 }
-.layout.layoutcanvas::-webkit-scrollbar {
+.layout.layoutcanvas::-webkit-scrollbar
+{
 	width: 0 !important;
-  }
+}
 .layoutcanvas > div:not(.multidivparent):hover ,nav:hover,.doubledivchild:hover,.crtfooterclass:hover,.tridivchild:hover
 {
 	transition: 0.5s;
@@ -36,7 +38,8 @@ body
 	cursor: move;
 }
 
-.layoutcanvas>div,nav,footer{
+.layoutcanvas>div,nav,footer
+{
 	transition: 1s;
 }
 .layoutoptions
@@ -97,11 +100,11 @@ button:focus {
 /* in common */
 .common
 {
-    margin: 40px 0px 40px 0px;
-    width: 100%;
+	margin: 40px 0px 40px 0px;
+	width: 100%;
 	background-color:#393e46;
 	border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
 }
 
 
@@ -126,7 +129,7 @@ button:focus {
 	color:#393e46;
 	font-size: xx-large;
 	margin: 40px 0px 40px 0px;
-    width: 100%;
+	width: 100%;
 }
 .crttopicclass:hover
 {
@@ -153,7 +156,7 @@ button:focus {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	transition: 1s;	
 	border-radius: 10px;
-
+	
 }
 .doubledivchild:nth-child(1)
 {
@@ -170,7 +173,7 @@ button:focus {
 	min-height: 100%;
 	background-color:#393e46;
 	border-radius: 10px;
-
+	
 }
 .tridivchild:nth-child(1)
 {
@@ -188,66 +191,112 @@ button:focus {
 
 /* footer */
 .crtfooterclass { 
-	  height: 200px; 
-	 }
-
+	height: 200px; 
+}
+#downloadbox
+{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	background-color:rgba(0, 0, 0, 0.4);
+	
+}
+.downloadd
+{
+	position: absolute;
+	top:50%;
+	left:50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transform: translate(-50%,-50%);
+	box-shadow: 0px 0px 100px black;
+	transition: 1s;
+	width: 500px;
+	height: 300px;
+	background-color: #232931;
+	border-radius: 20px;
+}
 #a
 {
 	display:none;
 }
-
+.close
+{
+	font-size: 20px; color:#eeeeee
+}
+.close:hover
+{
+	color: white;
+	cursor: pointer;
+}
+#ins1
+{
+	position: absolute;
+	left:28%;
+	top:3%;
+}
 /* unvisited link */
 a:link {
 	text-decoration: none;
 	color: white;
-  }
-  
-  /* visited link */
-  a:visited {
+}
+
+/* visited link */
+a:visited {
 	text-decoration: none;
 	color: white;
-  }
-  
-  /* mouse over link */
-  a:hover {
+}
+
+/* mouse over link */
+a:hover {
 	text-decoration: underline;
 	color: white;
-  }
-  
-  /* selected link */
-  a:active {
+}
+
+/* selected link */
+a:active {
 	text-decoration: none;
 	color: white;
-  }
-  .dsktponly
-  {
-	  display: none;
-  }
+}
+.dsktponly
+{
+	display: none;
+}
 
-  /* media */
-  @media only screen and (max-width: 768px) {
-	  .dsktponly
-	  {
-		  display: flex;
-		  padding: 0 30%;
-		  height: 100vh;
-		  width: 100vw;
-		  color: #eeeeee;
-		  background-color: #232931;
-		  text-align: center;
-		  font-family: 'Open Sans';
-		  flex-direction: column;
+/* media */
+@media only screen and (max-width: 768px) {
+	.dsktponly
+	{
+		display: flex;
+		padding: 0 30%;
+		height: 100vh;
+		width: 100vw;
+		color: #eeeeee;
+		background-color: #232931;
+		text-align: center;
+		font-family: 'Open Sans';
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	  }
-	  .layoutcanvas
-	  {
-		  display: none;
-	  }
-	  .layoutoptions
-	  {
-		  display: none;
-	  }
+	}
+	#ins1
+	{
+		display: none;
+	}
+	.layoutcanvas
+	{
+		display: none;
+	}
+	.layoutoptions
+	{
+		display: none;
+	}
 	.multidivparent .doubledivchild,.multidivparent .tridivchild
 	{
 		margin:10px 0px;
@@ -255,24 +304,24 @@ a:link {
 		width: 100%;
 	}
 	.doubledivchild:nth-child(1)
-{
-	margin-bottom: 10px;
+	{
+		margin-bottom: 10px;
+	}
+	.doubledivchild:nth-child(2)
+	{
+		margin-left: unset;
+	}
+	.tridivchild:nth-child(1)
+	{
+		margin-bottom: 10px;
+	}
+	.tridivchild:nth-child(2)
+	{
+		margin-right: unset;
+		margin-left: unset;
+	}
+	.tridivchild:nth-child(3)
+	{
+		margin-top: 10px;
+	}
 }
-.doubledivchild:nth-child(2)
-{
-	margin-left: unset;
-}
-.tridivchild:nth-child(1)
-{
-	margin-bottom: 10px;
-}
-.tridivchild:nth-child(2)
-{
-	margin-right: unset;
-	margin-left: unset;
-}
-.tridivchild:nth-child(3)
-{
-	margin-top: 10px;
-}
-  }

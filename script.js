@@ -133,7 +133,7 @@ function eldel(x){
 
 //To Download the final code
 function download(name, type) {
-	layoutcanvas.removeChild(document.getElementById('ins1'));
+	// layoutcanvas.removeChild(document.getElementById('ins1'));
 	nullvars=document.getElementsByTagName('null');
 	console.log(nullvars.length);
 	for(let i=0;i<nullvars.length;i++)
@@ -144,15 +144,17 @@ function download(name, type) {
 	file=layoutcanvas.outerHTML;
 	var a = document.getElementById("a");
 	a.style.display = "block";
+	document.getElementById('downloadbox').style.display="block";
 	generatedusing="<!-- This Layout code is generated using TAG-ON, Made by Abdul Wahid Naafi (naaficodes.github.io) -->";
-	generated="<!DOCTYPE html><html><head>"+generatedusing+"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style>*{padding:0;margin:0;}"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
+	generated="<!DOCTYPE html><html><head>"+generatedusing+"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style>"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
 	generated=generated.replace('class="layoutcanvas" id="layoutcanvas"',"");
+	generated=generated.replace(/common/g,"");
 	generated=generated.replace(new RegExp('oncontextmenu="javascript|[:]eldel[(]this[)]|;return false;|"','g'),"");
 	// generated=generated.replace(<null null="null" oncontextmenu="javascript:eldel(this);return false;"></null>/g',"");
 	var dfile = new Blob([generated], {type: type});
 	a.href = URL.createObjectURL(dfile);
 	a.download = name;
 }
-
-
-
+function closebox(){
+	document.getElementById('downloadbox').style.display='none';
+}
