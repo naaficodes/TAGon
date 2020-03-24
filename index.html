@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>TAG-ON</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="dragula.css">
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<script src="https://kit.fontawesome.com/2cba884da3.js" crossorigin="anonymous"></script>
-</head>
+	<head><!-- This Layout code is generated using TAG-ON, Made by Abdul Wahid Naafi (naaficodes.github.io) --><meta name='viewport' content='width=device-width, initial-scale=1.0'><style>
+*{padding: 0; margin: 0;}
+.crtcontentclass {  width: 100%; height: 100vh; background-color: #2196f3; }
+.crttopicclass { height: auto; color:#393e46; font-size: xx-large; margin: 10px 0px; width: 100%; }
+.multidivparent { margin: 10px 0px; display: flex; width: 100%; min-height: 300px; justify-content: space-between; flex-wrap: wrap; }
+.multidivparent .tridivchild { flex:3.333; min-height: 50vh; background-color:#9e9e9e;} 
+.tridivchild:nth-child(1) { margin-right: 5px; } 
+.tridivchild:nth-child(2) { margin-right: 5px; margin-left: 5px; } 
+.tridivchild:nth-child(3) { margin-left: 5px; }
+.crtfooterclass { margin: 10px 0px 0px 0px; width: 100%; height: 200px; background-color: #FF9800; }@media only screen and (max-width: 768px) {
+.crttopicclass{text-align:center;}
+.multidivparent .doubledivchild,.multidivparent .tridivchild { margin:unset; flex: unset; width: 100%; } .doubledivchild:nth-child(1) { margin-bottom: 10px; } .doubledivchild:nth-child(2) { margin-left: unset; } .tridivchild:nth-child(1) { margin-bottom: 10px; } .tridivchild:nth-child(2) { margin-right: unset; margin-left: unset; } .tridivchild:nth-child(3) { margin-top: 10px; }}</style></head>
 <body>
-
-<div class="maincon">
-	<p id="ins1" style="color:#757575;"><i class="fas fa-hand-pointer"></i> Drag layout to rearrange.<br/> <i class="fas fa-mouse"></i> Right click on the layout to <span style="color: tomato;">delete.</span></p>
-
-	<div class="dsktponly"><img src="TAG-on.png" width="100" /><br/>This Application is available only for Desktop and Tablets.<br/><p style="margin-top: 20px;">Thanks <span style="color: tomato;"><i class="fas fa-heart"></i></span></p></div>
-	<div class="layoutoptions">
-		<br>
-		<img src="TAG-on.png" width="200" style="margin:0px 10px 10px 10px;"/>
-		<p class="shorttext">Website Layout Code Generator </p>
-		<p class="shorttext"><i class="fas fa-check-circle"></i>  Mobile Responsive Layout</p>
-		<br/>
-		<button onclick="crttitle();"><span class="plusonbutton">+</span>Navbar</button>
-		<button onclick="crtcontent();"><span class="plusonbutton">+</span>Div</button>
-		<button onclick="crttopic();"><span class="plusonbutton">+</span>Topic</button>
-		<button onclick="crtdoublediv();"><span class="plusonbutton">+</span>Duo Div</button>
-		<button onclick="crttridiv();"><span class="plusonbutton">+</span>Tri Div</button>
-		<button onclick="crtfooter();"><span class="plusonbutton">+</span>Footer</button>
-		
-<button onclick="download('yourcode.html', 'text/html')" id="db"><span class="plusonbutton"><i class="fas fa-cogs"></i></span>Generate Code</button>
-<div id="downloadbox" onclick="closebox();">
-	<div class="downloadd" > 
-<i class="fas fa-cloud-download-alt" style="font-size: 40px; color:#eeeeee"></i>
-<br/>
-		<img src="TAG-on.png" width="200" /><br/><a href="" id="a" class="white" download>Click here to download your code</a> <br/><i  class="far fa-times-circle close" ></i></div> </div>
-
-<p class="shorttext">Made with <span style="color: tomato;"><i class="fas fa-heart"></i></span> by <a href="https://naaficodes.github.io/" target="_blank">Abdul Wahid Naafi</a></p>	
-</div>
-	<div class="layoutcanvas" id="layoutcanvas">		
+<div >		
+	<div class=crtcontentclass  ></div>
+	<h3 class=crttopicclass >Topic</h3>
+	<div class=multidivparent >
+		<div class=tridivchild></div><div class=tridivchild></div><div class=tridivchild></div></div>
+		<div class=crtcontentclass>
+			
+		</div>
+		<footer class=crtfooterclass>
+			
+		</footer>
 	</div>
-</div>
-<script type="text/javascript" src="script.js"></script>
-<script src='dragula.min.js'></script>
-<script>
-	dragula([document.getElementById("layoutcanvas")]);
-</script>
 </body>
 </html>
-
-<i class="far fa-badge-check"></i>
