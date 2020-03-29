@@ -131,6 +131,10 @@ function eldel(x){
 	
 }
 
+var intro=()=>
+{
+	document.getElementById('intro').style.display="block";
+};
 //To Download the final code
 function download(name, type) {
 	// layoutcanvas.removeChild(document.getElementById('ins1'));
@@ -144,7 +148,7 @@ function download(name, type) {
 	file=layoutcanvas.outerHTML;
 	var a = document.getElementById("a");
 	a.style.display = "block";
-	document.getElementById('downloadbox').style.display="block";
+	document.getElementById('downloadfile').style.display="block";
 	generatedusing="<!-- This Layout code is generated using TAG-ON, Made by Abdul Wahid Naafi (naaficodes.github.io) -->";
 	generated="<!DOCTYPE html><html><head>"+generatedusing+"<meta name='viewport' content='width=device-width, initial-scale=1.0'><style>"+style+mediaq1+mobstyle+"}"+"</style></head><body>"+file+"</body></html>";
 	generated=generated.replace('class="layoutcanvas" id="layoutcanvas"',"");
@@ -155,6 +159,10 @@ function download(name, type) {
 	a.href = URL.createObjectURL(dfile);
 	a.download = name;
 }
-function closebox(){
-	document.getElementById('downloadbox').style.display='none';
+function closebox(x){
+x.style.display='none';
 }
+
+document.getElementById('layoutoptions').addEventListener("click",()=>{
+	document.getElementById('gs').style.display='none';
+});
