@@ -137,7 +137,6 @@ var intro=()=>
 };
 //To Download the final code
 function download(name, type) {
-	// layoutcanvas.removeChild(document.getElementById('ins1'));
 	nullvars=document.getElementsByTagName('null');
 	console.log(nullvars.length);
 	for(let i=0;i<nullvars.length;i++)
@@ -159,10 +158,12 @@ function download(name, type) {
 	a.href = URL.createObjectURL(dfile);
 	a.download = name;
 }
+//this fuction closes the modal
 function closebox(x){
 x.style.display='none';
 }
 
+//To remove 'let's get started' text
 document.getElementById('layoutoptions').addEventListener("click",()=>{
 	document.getElementById('gs').style.display='none';
 });
