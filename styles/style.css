@@ -9,7 +9,7 @@ body
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	font-family: 'Open Sans';
+	
 }
 .maincon{
 	display: flex;
@@ -25,7 +25,7 @@ body
 .plusonbutton
 {
 	float: left;
-	font-size: 21px;
+	font-size: 18px;
 }
 .layout.layoutcanvas::-webkit-scrollbar
 {
@@ -54,15 +54,14 @@ body
 h1
 {
 	color: white;
-	font-family: 'Open Sans';
 	font-size: 40px;
 }
 button
 {
-	font-family: 'Open Sans';
-	margin: 10px;
+	
+	margin: 10px !important;
 	width: 80%;
-	font-size: 18px;
+	font-size: 18px !important;
 	padding: 14px 40px;
 	background-color: #4ecca3;
 	color: white;
@@ -89,6 +88,7 @@ button:focus {
 .shorttext{
 	color: whitesmoke;
 	size:16px;
+	text-align: center;
 }
 .crtbtn
 {
@@ -130,6 +130,7 @@ button:focus {
 	font-size: xx-large;
 	margin: 40px 0px 40px 0px;
 	width: 100%;
+	font-weight: bold;
 }
 .crttopicclass:hover
 {
@@ -207,18 +208,18 @@ button:focus {
 	position: absolute;
 	top:50%;
 	left:50%;
-	padding: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	padding: 30px;
 	flex-direction: column;
 	transform: translate(-50%,-50%);
 	box-shadow: 0px 0px 100px #333232;
 	transition: 1s;
 	width: 500px;
-	height: 300px;
+	min-height: 300px;
 	background-color: #232931;
 	border-radius: 20px;
+	text-align: center;
+	color: #eeeeee;
+	font-size: 18px;
 }
 #gs
 {
@@ -275,6 +276,12 @@ a:active {
 {
 	display: none;
 }
+.flexcenter
+{
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
 
 /* media */
 @media only screen and (max-width: 768px) {
@@ -287,16 +294,16 @@ a:active {
 		color: #eeeeee;
 		background-color: #232931;
 		text-align: center;
-		font-family: 'Open Sans';
+		
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
-	#ins1,.layoutoptions,.layoutcanvas,#gs,.custommodal,.modalinner
+	.layoutoptions,.modalinner,.layoutcanvas,#gs,#ins1,.custommodal
 	{
 		display: none !important;
 	}
-	.multidivparent .doubledivchild,.multidivparent .tridivchild
+.multidivparent .doubledivchild,.multidivparent .tridivchild
 	{
 		margin:10px 0px;
 		flex: unset;

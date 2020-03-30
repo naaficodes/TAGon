@@ -6,15 +6,21 @@
 <link rel="stylesheet" type="text/css" href="styles/dragula.css">
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <script src="https://kit.fontawesome.com/2cba884da3.js" crossorigin="anonymous"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
 </head>
 <body onload="intro();">
 
 <div class="maincon">
 	<div id="intro" class="custommodal" onclick="closebox(this);">
-		<div class="modalinner">
+		<div class="modalinner flexcenter">
 			<img src="img/TAG-on.png" width="200" /><br/>
 
-			<span style="font-size: 20px; color:#eeeeee; text-align:center;">Welcome Developer<br/><br/>With TAG-ON, no need to start your web projects from scratch, Generate starter HTML CSS layout code using TAG-ON's easy to use layout generator.<br/><br/> <i  class="far fa-times-circle close" ></i></span>
+			Welcome Developer<br/><br/>With TAG-ON, no need to start your web projects from scratch, Generate starter HTML CSS layout code using TAG-ON's easy to use layout generator.<br/><br/> <i  class="far fa-times-circle close" ></i>
 		</div>
 	</div>
 <p id="ins1" style="color:#757575;"><i class="fas fa-hand-pointer"></i> Drag layout to rearrange.<br/> <i class="fas fa-mouse"></i> Right click on the layout to <span style="color: tomato;">delete.</span></p>
@@ -44,7 +50,7 @@
 		<div class="layoutcanvas" id="layoutcanvas">		
 		</div>
 		<div id="downloadfile" class="custommodal" onclick="closebox(this);">
-			<div class="modalinner" > 
+			<div class="modalinner flexcenter" > 
 				<i class="fas fa-cloud-download-alt" style="font-size: 40px; color:#eeeeee"></i>
 				<br/>
 				<img src="img/TAG-on.png" width="200" /><br/><a href="" id="a" style="color: tomato; font-size: larger;" download>Click here to download your code</a> <br/><i  class="far fa-times-circle close" ></i>
