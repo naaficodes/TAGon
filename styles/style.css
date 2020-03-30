@@ -292,7 +292,7 @@ a:active {
 		align-items: center;
 		justify-content: center;
 	}
-	#ins1,.layoutoptions,.layoutcanvas,#gs
+	#ins1,.layoutoptions,.layoutcanvas,#gs,.custommodal
 	{
 		display: none;
 	}
