@@ -294,7 +294,7 @@ a:active {
 	}
 	#ins1,.layoutoptions,.layoutcanvas,#gs,.custommodal,.modalinner
 	{
-		display: none;
+		display: none !important;
 	}
 	.multidivparent .doubledivchild,.multidivparent .tridivchild
 	{
