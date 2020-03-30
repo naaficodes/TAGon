@@ -292,15 +292,7 @@ a:active {
 		align-items: center;
 		justify-content: center;
 	}
-	#ins1
-	{
-		display: none;
-	}
-	.layoutcanvas
-	{
-		display: none;
-	}
-	.layoutoptions
+	#ins1,.layoutoptions,.layoutcanvas,#gs
 	{
 		display: none;
 	}
